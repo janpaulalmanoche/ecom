@@ -1,0 +1,12 @@
+price may vary according to sizees(product attributed)
+
+https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+link for how to add and rmove text field dynamically using jqeury
+
+in our relationship one to many part
+we go to the phpmyadmin
+we click the table
+and click operation and
+click
+Empty the table (TRUNCATE)Documentation
+(yes)
