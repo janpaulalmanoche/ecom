@@ -52,7 +52,7 @@ class AdminController extends Controller
 
         //example of plucking somehintg again in the condition and compare it
         $displayLowStocks = Product::where('stock','=','0')->get();
-    
+        dd(auth()->user());
         // dd($productsLowStocks);
         // foreach($productsLowStocks as $try){
         //     $get= $try->stock;

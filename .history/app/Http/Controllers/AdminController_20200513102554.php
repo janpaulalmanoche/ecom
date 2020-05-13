@@ -51,8 +51,7 @@ class AdminController extends Controller
         $Totalorders = Order::get()->Count();
 
         //example of plucking somehintg again in the condition and compare it
-        $displayLowStocks = Product::where('stock','=','0')->get();
-    
+        $productsLowStocks = Product::where('stock','=','0')->get();
         // dd($productsLowStocks);
         // foreach($productsLowStocks as $try){
         //     $get= $try->stock;

@@ -20,12 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('l_name');
         //    $table->string('admin');
             $table->string('email')->unique();
-            $table->integer('type_id');
             $table->string('password');
             $table->string('street')->nullable();
             $table->string('baranggay')->nullable();
             $table->string('city')->nullable();
-            $table->string('mobile')->nullable();
+            $table->string('mobile');
             $table->rememberToken();
             $table->timestamps();
         });
