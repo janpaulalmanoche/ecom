@@ -53509,7 +53509,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     view_order_detail: function view_order_detail(id) {
       // alert('test')
-      window.location.assign('orders/list/' + id);
+      window.location.assign('/admin/view-order/' + id);
     }
   }
 });
