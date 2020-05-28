@@ -44,9 +44,9 @@
                     </div>
                     <div class="span3">
                         <ul class="site-stats">
-                            <li class="bg_lh"><a href="#"><i class="icon-user"></i> <strong>{{$countUsers}}</strong> <small>Resellers</small></a></li>
+                            <li class="bg_lh"><a href="#"><i class="icon-user"></i> <strong>{{$countUsers+1}}</strong> <small>Resellers</small></a></li>
                             {{--<li class="bg_lh"><a href="#"><i class="icon-plus"></i> <strong>120</strong> <small>New Users </small></a></li>--}}
-                            <li class="bg_lh"><a href="#"><i class="icon-user"></i> <strong>{{$count}}</strong> <small>Customers</small></a></li>
+                            <li class="bg_lh"><a href="#"><i class="icon-shopping-cart"></i> <strong>{{$count}}</strong> <small>New Orders</small></a></li>
                             <li class="bg_lh"><a href="#"><i class="icon-tag"></i> <strong>{{$Totalorders}}</strong> <small>Orders</small></a></li>
                             {{--<li class="bg_lh"><a href="#"><i class="icon-repeat"></i> <strong>10</strong> <small>Pending Orders</small></a></li>--}}
                             {{--<li class="bg_lh"><a href="#"><i class="icon-globe"></i> <strong>8540</strong> <small>Online Orders</small></a></li>--}}

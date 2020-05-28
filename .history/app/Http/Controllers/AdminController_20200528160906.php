@@ -56,9 +56,8 @@ class AdminController extends Controller
             return redirect('/admin')->with('flash_message_error','Please login');
         } */
         $cust = Type::where('type','customer')->first();
-        $res = Type::where('type','reseller')->first();
         $count= User::where('type_id',$cust->id)->count();
-        $countUsers= User::where('type_id',$res->id)->count();
+        $countUsers= User::get()->Count();
         $Totalorders = Order::get()->Count();
 
         //example of plucking somehintg again in the condition and compare it
