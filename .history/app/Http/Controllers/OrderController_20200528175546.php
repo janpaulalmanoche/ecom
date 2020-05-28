@@ -165,10 +165,10 @@ use UnionBankAuthTrait;
                     $pin = mt_rand(1000000,9999999);
                     $refferenceNO = Str::uuid(); 
                     // dd(Session::get('access_token_union'));
-                    if(empty(Session::get('access_token_union'))){
-                        return redirect('/generate-code');
-                    }
-                    $payment_merchant =  $this->payment_merchant($data['total'],$refferenceNO);
+                    // if(empty(Session::get('access_token_union'))){
+                    //     return redirect('/generate-code');
+                    // }
+                    // $payment_merchant =  $this->payment_merchant($data['total'],$refferenceNO);
                     
                     $order= new Order;
                     
@@ -178,9 +178,7 @@ use UnionBankAuthTrait;
                     
                     $order_products_count = Cart::where(['session_id'=>$session_id])->count();
                     
-                    if($order_products_count == 0){
-                        return redirect()->back()->with('flash_message_error','No Products In Cart');
-                    }
+                    dd($order_products_count);
 
                 $order->user_id = auth()->user()->id;
                 $order->total_amount = $data['total'];

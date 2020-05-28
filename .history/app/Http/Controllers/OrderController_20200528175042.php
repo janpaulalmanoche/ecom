@@ -144,7 +144,7 @@ use UnionBankAuthTrait;
         // union bank trait
 
         if($request->isMethod('post')){
-           
+            dd($request->all());
             $this->validate($request,[
                 'total' => 'required:integer',
                 "zip_code" => 'required',
@@ -155,33 +155,23 @@ use UnionBankAuthTrait;
                 // "optional_field" => 'max:3',  
                 ]);
                 // dd($request->all());
-                
-                try{
-                    
-                    $data=$request->all();
-                    $user_id = Auth::User()->id;//we can access the login users information using auth because of sessions in laravel
-                    $user_email= Auth::User()->email;
-                    
+
+            try{
+
+                $data=$request->all();
+                $user_id = Auth::User()->id;//we can access the login users information using auth because of sessions in laravel
+                $user_email= Auth::User()->email;
+
                     $pin = mt_rand(1000000,9999999);
                     $refferenceNO = Str::uuid(); 
                     // dd(Session::get('access_token_union'));
                     if(empty(Session::get('access_token_union'))){
-                        return redirect('/generate-code');
+                            return redirect('/generate-code');
                     }
-                    $payment_merchant =  $this->payment_merchant($data['total'],$refferenceNO);
-                    
-                    $order= new Order;
-                    
-               
-                    $session_id =Session::get('session_id');//get the session id we created in public function addtocart
-                    $cartProducts = Cart::where(['session_id'=>$session_id])->get();//**
-                    
-                    $order_products_count = Cart::where(['session_id'=>$session_id])->count();
-                    
-                    if($order_products_count == 0){
-                        return redirect()->back()->with('flash_message_error','No Products In Cart');
-                    }
+                   $payment_merchant =  $this->payment_merchant($data['total'],$refferenceNO);
 
+                $order= new Order;
+    
                 $order->user_id = auth()->user()->id;
                 $order->total_amount = $data['total'];
                 $order->order_status = "paid";
@@ -204,6 +194,7 @@ use UnionBankAuthTrait;
                 
                 //second query for ordered products
                 //get the productrs from crrt using session id
+                $session_id =Session::get('session_id');//get the session id we created in public function addtocart
                 //        $userCart=DB::table('cart')->where(['user_email'=>$user_email])->get();//dont use email.cause it will ge all products with the ame email
                 //            $userCart=DB::table('cart')->where(['session_id'=>$session_id])->get();
                 
@@ -211,6 +202,7 @@ use UnionBankAuthTrait;
                 
                 //           $
                 //            $cartProducts = DB::table('cart')->where(['user_email'=>$user_email])->get(); //when we use this it wil get all all the products added to acart using the email even on the pasdt
+                $cartProducts = Cart::where(['session_id'=>$session_id])->get();//**
     
                 // dd($cartProducts);
                 //we are getting all the data in cart table where session id is equal to the present session id so it wont get the product data in the past

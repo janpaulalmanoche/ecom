@@ -177,10 +177,7 @@ use UnionBankAuthTrait;
                     $cartProducts = Cart::where(['session_id'=>$session_id])->get();//**
                     
                     $order_products_count = Cart::where(['session_id'=>$session_id])->count();
-                    
-                    if($order_products_count == 0){
-                        return redirect()->back()->with('flash_message_error','No Products In Cart');
-                    }
+
 
                 $order->user_id = auth()->user()->id;
                 $order->total_amount = $data['total'];
