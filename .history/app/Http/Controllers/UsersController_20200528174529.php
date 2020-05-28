@@ -32,7 +32,6 @@ class UsersController extends Controller
     //redirect link for registration page
     public function RegistrationPageLink(){
         $getSessionID =  $session_id = Session::get('session_id');
-
         $countProductsinCart = DB::table('carts')->where('session_id' ,$getSessionID)->get()->count();
         return view('users.registrationusers')->with(compact('countProductsinCart'));
     }
