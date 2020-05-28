@@ -175,8 +175,8 @@
 
                             {{--<th>Quantity</th>--}}
                             <th>Ordered Products</th>
-                            <th> Reseller</th>
                             <th> Quantity</th>
+                            <th> Reseller</th>
                             <th> Price</th>
                             <th> Subtotal</th>
                         </tr>
@@ -191,6 +191,10 @@
 
                             <td>{{$display->product_name}}</td>
 
+                            <td>
+                                {{$display->pivot->quantity}}
+
+                            </td>
 
                             <td>
                                     @php
@@ -199,10 +203,6 @@
                                     {{$reseller->f_name}}
                                     {{$reseller->m_name}}
                                     {{$reseller->l_name}}
-                            </td>
-                            <td>
-                                {{$display->pivot->quantity}}
-
                             </td>
 
                             <td> {{$display->pivot->price}}</td>

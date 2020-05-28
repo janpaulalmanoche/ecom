@@ -175,8 +175,8 @@
 
                             {{--<th>Quantity</th>--}}
                             <th>Ordered Products</th>
-                            <th> Reseller</th>
                             <th> Quantity</th>
+                            <th> Reseller</th>
                             <th> Price</th>
                             <th> Subtotal</th>
                         </tr>
@@ -191,7 +191,11 @@
 
                             <td>{{$display->product_name}}</td>
 
+                            <td>
 
+
+                            </td>
+                            
                             <td>
                                     @php
                                     $reseller= App\User::where('id',$display->pivot->reseller_id)->first()
@@ -199,10 +203,6 @@
                                     {{$reseller->f_name}}
                                     {{$reseller->m_name}}
                                     {{$reseller->l_name}}
-                            </td>
-                            <td>
-                                {{$display->pivot->quantity}}
-
                             </td>
 
                             <td> {{$display->pivot->price}}</td>
