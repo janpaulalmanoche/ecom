@@ -192,13 +192,6 @@
                                 <td>{{$display->product_name}}</td>
                                 
                                 <td> {{$display->pivot->quantity}}</td>
-                                <td> 
-                                @foreach($orderss->ordersz as $t)        
-                                    {{$t->reseller()->first()->f_name}}
-                                    {{$t->reseller()->first()->m_name}}
-                                    {{$t->reseller()->first()->l_name}}
-                                @endforeach
-                            </td>
                                   
                                 <td> {{$display->pivot->price}}</td>
                                 <td>{{($display->pivot->quantity)*($display->pivot->price)}} <td>

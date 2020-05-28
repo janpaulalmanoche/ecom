@@ -195,8 +195,6 @@
                                 <td> 
                                 @foreach($orderss->ordersz as $t)        
                                     {{$t->reseller()->first()->f_name}}
-                                    {{$t->reseller()->first()->m_name}}
-                                    {{$t->reseller()->first()->l_name}}
                                 @endforeach
                             </td>
                                   
