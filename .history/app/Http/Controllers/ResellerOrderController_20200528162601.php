@@ -68,8 +68,10 @@ class ResellerOrderController extends Controller
         ->with(['ordersz' => function ($query) use ($user_id) {
             $query->where('reseller_id', $user_id);
         }, 'customer', 'ordersz.reseller'])
+        whereDate('created_at','=',Carbon::parse($date))
+        ->where('order_status', 'new')->get();
 
-        ->whereDate('created_at','=',$date)->get();
+        
 
         $new_orders->map(function ($orders) {
             $orders->formated_created = date('F d Y h:i:s a', strtotime($orders->created_at));

@@ -69,7 +69,10 @@ class ResellerOrderController extends Controller
             $query->where('reseller_id', $user_id);
         }, 'customer', 'ordersz.reseller'])
 
-        ->whereDate('created_at','=',$date)->get();
+        ->whereDate('created_at','=',$date)
+        ->where('order_status', 'new')->get();
+
+        
 
         $new_orders->map(function ($orders) {
             $orders->formated_created = date('F d Y h:i:s a', strtotime($orders->created_at));

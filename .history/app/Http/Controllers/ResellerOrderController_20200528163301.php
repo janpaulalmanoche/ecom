@@ -71,6 +71,10 @@ class ResellerOrderController extends Controller
 
         ->whereDate('created_at','=',$date)->get();
 
+        $t = Order::whereDate('created_at','=',$date)->get();
+
+        dd($new_orders);
+
         $new_orders->map(function ($orders) {
             $orders->formated_created = date('F d Y h:i:s a', strtotime($orders->created_at));
             return $orders;
