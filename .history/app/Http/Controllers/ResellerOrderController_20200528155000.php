@@ -15,21 +15,21 @@ class ResellerOrderController extends Controller
     }
     public function show($order_id)
     {
-        $new_order = Order::find($order_id);
-        // dd($order->ordersz()->where('reseller_id',auth()->user()->id)->get());
-
         $user_id = auth()->user()->id;
-        // $new_order = Order::whereHas('ordersz', function (Builder $query) use ($user_id) {
-        //     $query->where('reseller_id', $user_id);
-        // })->with(['ordersz' => function ($query) use ($user_id) {
-        //     $query->where('reseller_id', $user_id);
-        // }, 'customer', 'ordersz.reseller'])
-        //     ->where('order_status', 'new')
-        //     ->where('id', $order_id)
-        //     ->first();
+   
+        $new_order = Order::Has('ordersz', function (Builder $query) use ($user_id) {
+            $query->where('reseller_id', $user_id);
+        })->with(['ordersz' => function ($query) use ($user_id) {
+            $query->where('reseller_id', $user_id);
+        }, 'customer', 'ordersz.reseller'])
+            ->where('order_status', 'new')
+            ->where('id', $order_id)
+            ->first();
 
+        // $new_order = Order::where('id',$order_id)->first();
+
+            dd($new_order);
         $order_products = $new_order->ordersz()->where('reseller_id', $user_id)->get();
-        
 
         $order_products->map(function($sum){
             $sum->price_multiply_quantity = $sum->price * $sum->quantity;

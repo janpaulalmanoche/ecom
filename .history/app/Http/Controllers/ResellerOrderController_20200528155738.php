@@ -29,7 +29,6 @@ class ResellerOrderController extends Controller
         //     ->first();
 
         $order_products = $new_order->ordersz()->where('reseller_id', $user_id)->get();
-        
 
         $order_products->map(function($sum){
             $sum->price_multiply_quantity = $sum->price * $sum->quantity;

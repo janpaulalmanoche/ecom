@@ -9,7 +9,7 @@ class Order extends Model
 {
     //
     public function ordersz(){
-        return $this->hasMany('App\OrderProducts','order_id','id');//order_id can be found on our OrderProduct tbl
+        return $this->hasMany('App\OrderProducts','order_id'),'id';//order_id can be found on our OrderProduct tbl
     }
 
     function product() {
