@@ -227,8 +227,7 @@ use UnionBankAuthTrait;
                     $cartPro->save();
                 }
 
-                
-                $mail = Mail::to(auth()->user()->email)->send(new OrderSuccessEmail(auth()->user()->f_name,$refferenceNO));
+                $mail = Mail::to(auth()->user()->email)->send(new OrderSuccessEmail());
     //            //subtrat the quantity of the ordered products to products stock
     //            $cartProducts = DB::table('cart')->where(['session_id'=>$session_id])->get();
     //            foreach($cartProducts as $pro){

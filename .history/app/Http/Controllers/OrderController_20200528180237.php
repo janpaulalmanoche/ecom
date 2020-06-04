@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
-use App\Mail\OrderSuccessEmail;
 use App\Order;
 use App\OrderProduct;
 use App\OrderShipping;
 use App\Product;
 use App\Traits\UnionBankAuthTrait;
 use App\Traits\UnionBankMerchantPaymentTrait;
-use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -226,9 +224,6 @@ use UnionBankAuthTrait;
                     $cartPro ->quantity =  $pro->quantity;
                     $cartPro->save();
                 }
-
-                
-                $mail = Mail::to(auth()->user()->email)->send(new OrderSuccessEmail(auth()->user()->f_name,$refferenceNO));
     //            //subtrat the quantity of the ordered products to products stock
     //            $cartProducts = DB::table('cart')->where(['session_id'=>$session_id])->get();
     //            foreach($cartProducts as $pro){
