@@ -30,7 +30,7 @@ return [
     */
 
     // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-    'host' => 'smtp.sendgrid.net',
+    'host' => ''smtp.sendgrid.net',',
 
     /*
     |--------------------------------------------------------------------------

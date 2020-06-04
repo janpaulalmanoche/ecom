@@ -164,7 +164,7 @@
 
             </div>
             <div class="message2">
-                <p>Hello {{ucfirst($name)}} , we received your {{$refference_number}} on {{date('F d Y h:i:s A',strtotime(Carbon\Carbon::now()))}} 
+                <p>Hello {{ucfirst($name)}} , we received you {{$refference_number}} on {{date('F d Y h:i:s A',strtotime(Carbon\Carbon::now()))}} 
                 .We're getting your order ready and will let you know once it's on the way. Enjoy shopping with us and hope to see you shop again soon!
                 </p>
             </div>
