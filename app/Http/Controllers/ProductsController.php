@@ -91,10 +91,6 @@ class ProductsController extends Controller
             $productHistory->price =  $data['price'];
             $productHistory->save();
 
-
-
-
-
             return redirect()->back()->with("flash_message_success",'Product Save');
 
 

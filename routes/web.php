@@ -341,3 +341,5 @@ Route::post('dynamic_dependent/fetchhh', 'DynamicController@fetch3')->name('dyna
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('pm','PaymongoController');
