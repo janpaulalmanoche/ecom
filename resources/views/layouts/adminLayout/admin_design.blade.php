@@ -36,26 +36,24 @@
 @include('layouts.adminLayout.admin_footer')
 
 
-<script src="{{ asset('js/backend_js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/backend_js/jquery.ui.custom.js') }}"></script>
-<script src="{{ asset('js/backend_js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/backend_js/jquery.uniform.js') }}"></script>
-<script src="{{ asset('js/backend_js/select2.min.js') }}"></script>
-<script src="{{ asset('js/backend_js/jquery.validate.js') }}"></script>   <!-- for jquery or ajax validation file-->
-<script src="{{ asset('js/backend_js/matrix.js') }}"></script>
-<script src="{{ asset('js/backend_js/matrix.form_validation.js') }}"></script>
+<script src="js/backend_js/jquery.min.js"></script>
+<script src="js/backend_js/jquery.ui.custom.js"></script>
+<script src="js/backend_js/bootstrap.min.js"></script>
+<script src="js/backend_js/jquery.uniform.js"></script>
+<script src="js/backend_js/select2.min.js"></script>
+<script src="js/backend_js/jquery.validate.js"></script>   <!-- for jquery or ajax validation file-->
+<script src="js/backend_js/matrix.js"></script>
+<script src="js/backend_js/matrix.form_validation.js"></script>
 <!-- for our tables in view-->
-<script src="{{asset('js/backend_js/jquery.dataTables.min.js') }}"></script>
-<script src="{{asset('js/backend_js/matrix.tables.js') }}"></script>
+<script src="js/backend_js/jquery.dataTables.min.js"></script>
+<script src="js/backend_js/matrix.tables.js"></script>
 <!-- -->
 
 
-<script src="{{asset('js/backend_js/main.js') }}"></script>
-{{--this should be below in the tables, to avoid errors,for message popup notif--}}
-<script src="{{asset('js/backend_js/jquery.gritter.min.js')}}"></script>
-{{--<script src="{{asset('js/backend_js/jquery.peity.min.js')}}"></script>--}}
-<script src="{{asset('js/backend_js/matrix.interface.js')}}"></script>
-<script src="{{asset('js/backend_js/matrix.popover.js')}}"></script>
+<script src="js/backend_js/main.js"></script>
+<script src="js/backend_js/jquery.gritter.min.js"></script>
+<script src="js/backend_js/matrix.interface.js"></script>
+<script src="js/backend_js/matrix.popover.js"></script>
 
 
 
