@@ -38,14 +38,14 @@
 
 @include('layouts.frontLayout.front_footer')
 
-<script src="{{ asset('js/frontend_js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/frontend_js/jquery.js') }}"></script>
-<script src="{{ asset('js/frontend_js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/frontend_js/jquery.scrollUp.min.js') }}"></script>
-<script src="{{ asset('js/frontend_js/price-range.js') }}"></script>
-<script src="{{ asset('js/frontend_js/jquery.prettyPhoto.js') }}"></script>
-<script src="{{ asset('js/frontend_js/main.js') }}"></script>
-<script src="{{ asset('js/frontend_js/jquery.validate.js') }}"></script> <!-- for jquery or ajax validation file-->
+<script src="js/frontend_js/jquery.min.js"></script>
+<script src="js/frontend_js/jquery.js"></script>
+<script src="js/frontend_js/bootstrap.min.js"></script>
+<script src="js/frontend_js/jquery.scrollUp.min.js"></script>
+<script src="js/frontend_js/price-range.js"></script>
+<script src="js/frontend_js/jquery.prettyPhoto.js"></script>
+<script src="js/frontend_js/main.js"></script>
+<script src="js/frontend_js/jquery.validate.js"></script> <!-- for jquery or ajax validation file-->
 
 </body>
 </html>
