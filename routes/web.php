@@ -143,7 +143,8 @@ Route::match(['get', 'post'], '/check-email-register', 'UsersController@CheckEma
 //adminlogin is found in kernep.php where we put our mfiddleware file
 Route::group(['middleware' => ['adminlogin']], function () { //this is how to put admin protection in laravel.middleware method
     //then go to app/http/middleware/RedirectifAuthenticated
-    Route::get('/admin/dashboard', 'AdminController@dashboard');
+    Route::get('/admin/dashboard', 'AdminController@das
+    hboard');
     Route::get('/admin/settings', 'AdminController@settings');
 
     Route::get('/admin/check-pwd', 'AdminController@chkPassword'); //this if form the ajax in matrix.form_validation.jd

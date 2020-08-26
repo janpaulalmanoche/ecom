@@ -16,9 +16,11 @@ trait UnionBankAuthTrait
         $this->client = new Client();
         $this->union_app_id = env('UNION_ID');
         $this->union_app_secret = env('UNION_SECRET');
-        $this->redirect_url = env('REDIRECT_URL');
+        // $this->redirect_url = env('REDIRECT_URL');
+        $this->redirect_url ='http://ecom-reseller.herokuapp.com/oauth2/callback';
         $this->access_token = Session::get('access_token_union');
         $this->paymaya_id = "01bbb51e-1e6c-4bd4-af9c-450957522aac";
+        
     }
    
     //generate a code that will be later used to request an access token
