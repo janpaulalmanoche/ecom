@@ -12,13 +12,13 @@
 
 
 
-    <link href="css/frontend_css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/frontend_css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/frontend_css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/frontend_css/price-range.css" rel="stylesheet">
-    <link href="css/frontend_css/animate.css" rel="stylesheet">
-    <link href="css/frontend_css/main.css" rel="stylesheet">
-    <link href="css/frontend_css/responsive.css" rel="stylesheet">
+    <link href="/css/frontend_css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/frontend_css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/frontend_css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/frontend_css/price-range.css" rel="stylesheet">
+    <link href="/css/frontend_css/animate.css" rel="stylesheet">
+    <link href="/css/frontend_css/main.css" rel="stylesheet">
+    <link href="/css/frontend_css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script href="{{ asset('js/frontend_js/html5shiv.js')}}"></script>
     <script href="{{ asset('js/frontend_js/respond.min.js') }}"></script>
