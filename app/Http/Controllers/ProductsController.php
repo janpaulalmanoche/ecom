@@ -92,11 +92,11 @@ class ProductsController extends Controller
                 $destinationPath = public_path($small_image_path);
                 $image->move($destinationPath, $name);
 
-                $destinationPath_m = public_path($medium_image_path);
-                $image->move($destinationPath_m, $name);
+                // $destinationPath_m = public_path($medium_image_path);
+                // $image->move($destinationPath_m, $name);
 
-                $destinationPath_l = public_path($large_image_path);
-                $image->move($destinationPath_l, $name);
+                // $destinationPath_l = public_path($large_image_path);
+                // $image->move($destinationPath_l, $name);
 
                 $product->image = $name;
             }
