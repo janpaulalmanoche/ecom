@@ -168,7 +168,7 @@ Route::group(['middleware' => ['adminlogin']], function () { //this is how to pu
 
 
     //product
-    Route::match(['get', 'post'], '/admin/add-product', 'ProductsController@addP
+    Route::match(['get', 'post'], '/admin/add-product', 'ProductsController@addProduct
     roduct');
     Route::get('/admin/view-products', 'ProductsController@viewProducts');
     Route::match(['get', 'post'], '/admin/edit-product/{id}', 'ProductsController@editProduct');
