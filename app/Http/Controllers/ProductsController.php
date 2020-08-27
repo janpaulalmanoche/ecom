@@ -39,7 +39,7 @@ class ProductsController extends Controller
             $data=$request->all();
 
             if(empty($data['stock'])){
-                $data['stock']="";
+                $data['stock']= 0;
             }
             if(empty($data['description'])){
                 $data['description']="";
