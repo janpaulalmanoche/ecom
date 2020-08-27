@@ -1,6 +1,6 @@
 <?php
 // you can comment all of this to get back to default settings
-$url = parse_url('postgres://bdrjvkjcyoylye:f37b7602f36016c477bc5e9ae368b1eac633cf0d3b91df3f85904af4add433a5@ec2-52-204-20-42.compute-1.amazonaws.com:5432/d2jnvs0670flio');
+$url = parse_url('postgres://mjvynvqwnsskwt:da25925c9536bc512aabc362b073e63ac31c7e7965f69071c79edbafb7103d0d@ec2-54-160-120-28.compute-1.amazonaws.com:5432/ddhujgit4mach5');
 
 
 $host = $url["host"];
