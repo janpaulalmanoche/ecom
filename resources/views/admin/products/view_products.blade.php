@@ -89,7 +89,6 @@
 
 
 
-                                        <!-- <a id="#delProductT" href="<?php/* {{url('/admin/delete-product/'.$product->id)}}*/?> " class="btn btn-danger btn-mini">Delete</a>-->
                                             <a id="delProduct" rel="{{ $product->id }}" rel1="delete-product" href="javascript:"
                                                 class="btn btn-danger btn-mini deleteRecord"><i class="icon-trash"></i> </a>
                                                                                                 <!-- rel1 is our url -->
