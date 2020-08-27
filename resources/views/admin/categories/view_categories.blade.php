@@ -62,7 +62,6 @@
                                         <a href="{{url('/admin/edit-category/'.$category->id) }}" class="btn btn-primary btn-mini"><i class="icon-edit"></i></a>
                                         <!-- we inclue $category->id to pass id for the edit_category page -->
 
-                                    <!-- <a id="#DEL_CAT" href="<?php/* {{url('/admin/delete-category/'.$category->id)}}*/?> " class="btn btn-danger btn-mini">Delete</a>-->
                                 <a id="DEL_CAT" rel="{{ $category->id }}" rel1="delete-category" href="javascript:"  class="btn btn-danger btn-mini deleteRecord"><i class="icon-trash"></i></a>
                                         <!-- rel1 is our url -->
 

@@ -58,6 +58,7 @@ class ResellerAddProductApiController extends Controller
         $save->product_id = $request->product_id;
         $save->user_id = $request->user_id;
         $save->resell_price = $request->resell_price;
+        $save->rating = 0;
         $save->save();
 
         return response($save);
