@@ -19,8 +19,8 @@ use phpDocumentor\Reflection\Types\Null_;
 use Session;
 use Auth;
 use DB;
-
-
+use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {//opening
@@ -64,22 +64,35 @@ class ProductsController extends Controller
 
             //upload image
             if($request->hasFile('image')) {
-                $image_tmp = Input::file('image');
-                if ($image_tmp->isValid()){//check if the file is image then proceed
-                   // echo "test"; die;
+                // $image_tmp = Input::file('image');
+                // if ($image_tmp->isValid()){//check if the file is image then proceed
+                //    // echo "test"; die;
 
-                    $extension = $image_tmp->getClientOriginalExtension();
-                    $filename = rand(111,99999).'.'.$extension;//give random name
-                    $large_image_path = 'images/backend_images/products/large/'.$filename;
-                    $medium_image_path = 'images/backend_images/products/medium/'.$filename;
-                    $small_image_path = 'images/backend_images/products/small/'.$filename;
-                    //resirze image
-                    Image::make($image_tmp)->save($large_image_path);
-                    Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
-                    Image::make($image_tmp)->resize(300,300)->save($small_image_path);
-                    //store
-                    $product->image = $filename;
-                }
+                //     $extension = $image_tmp->getClientOriginalExtension();
+                //     $filename = rand(111,99999).'.'.$extension;//give random name
+                    // $large_image_path = 'images/backend_images/products/large/'.$filename;
+                    // $medium_image_path = 'images/backend_images/products/medium/'.$filename;
+                    // $small_image_path = 'images/backend_images/products/small/'.$filename;
+                //     //resirze image
+                //     Image::make($image_tmp)->save($large_image_path);
+                //     Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
+                //     Image::make($image_tmp)->resize(300,300)->save($small_image_path);
+                //     //store
+                //     $product->image = $filename;
+                // }
+
+                // $large_image_path = 'images/backend_images/products/large/';
+                // $medium_image_path = 'images/backend_images/products/medium/';
+                $small_image_path = 'images/backend_images/products/small';
+                // $path = $request->file('image')->store('images');
+            //    $path =  Storage::putFileAs($small_image_path, $request->file('image') , 'public');
+
+               $image = $request->file('image');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = public_path($small_image_path);
+                $image->move($destinationPath, $name);
+
+                $product->image = $name;
             }
             $product ->save();
 
