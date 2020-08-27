@@ -81,8 +81,8 @@ class ProductsController extends Controller
                 //     $product->image = $filename;
                 // }
 
-                // $large_image_path = 'images/backend_images/products/large/';
-                // $medium_image_path = 'images/backend_images/products/medium/';
+                $large_image_path = 'images/backend_images/products/large';
+                $medium_image_path = 'images/backend_images/products/medium';
                 $small_image_path = 'images/backend_images/products/small';
                 // $path = $request->file('image')->store('images');
             //    $path =  Storage::putFileAs($small_image_path, $request->file('image') , 'public');
@@ -91,6 +91,12 @@ class ProductsController extends Controller
                 $name = time().'.'.$image->getClientOriginalExtension();
                 $destinationPath = public_path($small_image_path);
                 $image->move($destinationPath, $name);
+
+                $destinationPath_m = public_path($medium_image_path);
+                $image->move($destinationPath_m, $name);
+
+                $destinationPath_l = public_path($large_image_path);
+                $image->move($destinationPath_l, $name);
 
                 $product->image = $name;
             }
