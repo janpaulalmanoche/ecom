@@ -21,7 +21,7 @@ class CreateOrderShippingsTable extends Migration
             $table->text('baranggay');
             $table->text('street');
             $table->text('other_details');
-            $table->integer('phone_no');
+            $table->string('phone_no');
             $table->timestamps();
         });
     }
