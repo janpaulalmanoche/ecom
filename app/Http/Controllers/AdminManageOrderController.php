@@ -94,7 +94,7 @@ class AdminManageOrderController extends Controller
 public function viewPaidCustomerOrders(){
 
     $orders = Order::with('products' , 'user')
-        ->where('order_status', '=' , 'Paid')
+        ->where('order_status', '=' , 'paid')
         ->get();
 
 
